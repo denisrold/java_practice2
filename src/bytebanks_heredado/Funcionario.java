@@ -1,6 +1,6 @@
 package bytebanks_heredado;
 
-public class Funcionario {
+public abstract class Funcionario {
 
 	private String nombre;
 	private String documento;
@@ -38,16 +38,6 @@ public class Funcionario {
 		this.salario = salario;
 	}
 	
-	public double getBonificacion() {
-		if (this.tipo == 0) {
-		return this.salario * 0.1;
-		}
-		else if(this.tipo == 1) {
-			return this.salario;
-		}
-		else {
-			return 0;
-		}
-	}
+	public abstract double getBonificacion();
 
 }

@@ -1,16 +1,22 @@
 package bytebanks_heredado;
 
-public class Gerente extends Funcionario {
-	private String clave;
-	public void setClave(String clave) {
-		this.clave = clave;
-	};
-	public boolean iniciarSesion(String clave) {
-		return clave == "AluraCursosOnline";
-	}
-//sobre-escritura de metodo; misma firma del metodo, pero sobre la clase hija
+public class Gerente extends Funcionario implements Autenticable{
+
+	@Override
 public double getBonificacion() {
 	System.out.println("Ejecutado desde gerente.");
-	return super.getSalario() + (super.getBonificacion()); // gana un 10% mas 
+	return 2000;
 }
+
+	@Override
+	public void setClave(String clave) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean iniciarSesion(String clave) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
